@@ -42,12 +42,13 @@ cd steganography-tool
 
 ```bash
 pip install pillow numpy
+```
 
 ## Running the Application
 
 ```bash
 python3 gui_lsb.py
-
+```
 
 ## File Structure
 
@@ -58,6 +59,7 @@ python3 gui_lsb.py
 ├── secure_output.png     # Sample image output (if generated)
 ├── extracted_secret.png  # Image extracted from image (if generated)
 ├── README.md             # Project documentation
+```
 
 ## Usage
 
