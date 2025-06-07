@@ -1,6 +1,6 @@
 # Stegenography-Tool
 
-Overview
+##Overview
 
 This project is a comprehensive GUI-based steganography tool built in Python. It allows users to securely hide and extract data using various steganographic techniques:
 
@@ -12,7 +12,7 @@ Audio to Text Steganography
 
 Users can encode (hide) or decode (extract) data with optional password protection (for text-in-image), and interact with a user-friendly interface designed using Tkinter.
 
-Features
+##Features
 
 Encode and decode secret messages in PNG/BMP images
 
@@ -24,7 +24,7 @@ Password support for image-text steganography (optional)
 
 Intuitive GUI that dynamically updates based on user input selections
 
-Technologies Used
+##Technologies Used
 
 Python 3.x
 
@@ -36,30 +36,30 @@ Custom stegano.py module for core logic
 
 Setup Instructions
 
-Prerequisites
+##Prerequisites
 
 Python 3.x (recommended: Python 3.8+)
 
-Installation
+##Installation
 
-Clone the repository:
+###Clone the repository:
 
 git clone https://github.com/your-username/steganography-tool.git
 cd steganography-tool
 
-Install required libraries:
+###Install required libraries:
 
 pip install pillow
 
-(Optional) If using additional image/audio formats, install:
+###(Optional) If using additional image/audio formats, install:
 
 pip install numpy
 
-Running the Application
+##Running the Application
 
 python3 gui_lsb.py
 
-File Structure
+##File Structure
 
 ├── gui_lsb.py          # Main GUI interface
 ├── stegano.py          # Core encoding/decoding logic
@@ -68,7 +68,7 @@ File Structure
 ├── extracted_secret.png# Image extracted from image (if generated)
 ├── README.md           # Project documentation
 
-Usage
+##Usage
 
 Launch the application.
 
@@ -82,7 +82,7 @@ Click on Perform Operation to complete the task.
 
 Output status and results will be shown below the input area.
 
-Notes
+##Notes
 
 Only .png and .bmp files are supported for image operations.
 
@@ -90,7 +90,7 @@ Audio files must be in .wav format (16-bit PCM).
 
 The secret image in image-in-image steganography should ideally be smaller than the cover image.
 
-License
+##License
 
 This project is licensed under the MIT License.
 
