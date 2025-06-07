@@ -1,4 +1,4 @@
-# Stegenography-Tool
+# Steganography-Tool
 
 ## Overview
 This project is a comprehensive GUI-based steganography tool built in Python. It allows users to securely hide and extract data using various steganographic techniques:
