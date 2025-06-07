@@ -82,7 +82,9 @@ python3 gui_lsb.py
 ## Notes
 
 -Only .png and .bmp files are supported for image operations.
+
 -Audio files must be in .wav format (16-bit PCM).
+
 -For image-in-image steganography, the secret image should be smaller than the cover image.
 
 ## License
