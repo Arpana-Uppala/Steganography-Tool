@@ -44,11 +44,13 @@ cd steganography-tool
 pip install pillow numpy
 ```
 
+
 ## Running the Application
 
 ```bash
 python3 gui_lsb.py
 ```
+
 
 ## File Structure
 
@@ -61,14 +63,21 @@ python3 gui_lsb.py
 ├── README.md             # Project documentation
 ```
 
+
 ## Usage
 
 1.Launch the application.
+
 2.Select the type of steganography (Image → Text, Image → Image, Audio → Text).
+
 3.Choose whether to encode or decode.
+
 4.Fill in the prompted fields such as image path, message, audio file, or password.
+
 5.Click on Perform Operation.
+
 6.Output status and results will appear at the bottom. Decoded messages will appear in bold.
+
 
 ## Notes
 
