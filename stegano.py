@@ -95,7 +95,7 @@ def encode_image_in_image(cover_img_path, secret_img_path, output_path):
             cover_pixels[x, y] = (r, g, b)
 
     cover.save(output_path)
-    print("✅ Image hidden successfully in", output_path)
+    print("Image hidden successfully in", output_path)
 
 def decode_image_from_image(stego_image_path, secret_size, output_path):
     stego = Image.open(stego_image_path).convert('RGB')
