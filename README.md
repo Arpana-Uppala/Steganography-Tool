@@ -36,6 +36,7 @@ Users can encode (hide) or decode (extract) data with optional password protecti
 ```bash
 git clone https://github.com/your-username/steganography-tool.git
 cd steganography-tool
+```
 
 2. Install required libraries:
 
