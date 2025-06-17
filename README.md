@@ -1,39 +1,17 @@
 # SteganoTool
 
-**SteganoTool** is a Python-based steganography application featuring a user-friendly GUI built with `tkinter`. This tool allows users to securely embed and extract hidden data in digital media using multiple steganographic techniques.
-
-## Overview
-
-The application supports:
-
-- Hiding and extracting **text messages** inside images
-- Embedding and retrieving **images within images**
-- Encoding and decoding **audio files (WAV format) within images**
-
-The tool is developed to demonstrate secure and covert communication through steganography and provides a simplified interface suitable for educational and personal use.
+**SteganoTool** is a Python-based steganography application that enables users to securely embed and extract hidden information within images and audio files using a simple and intuitive graphical interface.
 
 ## Features
 
-- Graphical User Interface using `tkinter`
-- Supports commonly used image formats (`.png`, `.jpg`, `.bmp`)
-- Supports WAV audio file embedding
-- Modular code structure for easy maintenance and extension
-- Compatible with macOS systems
-- Packaged as a standalone application using PyInstaller
-
-## Requirements
-
-To run the application from source, ensure the following Python packages are installed:
-
-- Pillow
-- OpenCV (`opencv-python`)
-- NumPy
-
-You can install them using the following command:
-
-```bash
-pip3 install -r requirements.txt
-```
+- Hide text in image (LSB steganography)
+- Extract text from stego-image
+- Hide one image inside another
+- Extract hidden image from stego-image
+- Hide text inside audio files
+- Extract hidden text from audio files
+- Clean and user-friendly GUI built with `tkinter`
+- macOS `.app` standalone build (no need to install Python)
 
 ## File Structure
 
@@ -46,6 +24,31 @@ SteganoTool/
 ├── .gitignore           # Git ignore rules
 └── dist/                # (Optional) Folder containing built application
 ```
+
+## Dependencies
+
+The following Python libraries are used in this project:
+
+- `altgraph==0.17.4`
+- `colorama==0.4.6`
+- `crayons==0.4.0`
+- `macholib==1.16.3`
+- `modulegraph==0.19.6`
+- `numpy==2.3.0`
+- `opencv-python==4.11.0.86`
+- `packaging==25.0`
+- `piexif==1.1.3`
+- `pillow==10.4.0`
+- `py2app==0.28.8`
+- `pycryptodome==3.23.0`
+- `pydub==0.25.1`
+- `pyinstaller==6.14.1`
+- `pyinstaller-hooks-contrib==2025.5`
+- `setuptools==80.9.0`
+- `stegano==1.0.1`
+- `tk==0.1.0`
+
+These are automatically installed using the `requirements.txt`.
 
 ## How to Use
 
@@ -104,27 +107,18 @@ open dist/gui.app
 
 - Developed and tested on macOS (Intel and Apple Silicon)
 - Compatible with Python 3.9 and above
-- tkinter and other core libraries are standard in most Python installations
+- tkinter and other libraries are bundled in the standalone `.app` build
 
-## Limitations
+## Download Pre-Built App
 
-- Audio steganography currently supports only uncompressed `.wav` format
-- Large file embedding may increase processing time
-- GUI optimized for medium-resolution screens (recommended 13" and above)
+You can download the pre-built macOS `.app` version from the following link:
 
-## Contributing
-
-This project is currently a part of an academic internship and is not open to public contributions. However, if you encounter issues or would like to suggest enhancements, feel free to open an issue.
+**[Download SteganoTool macOS Build](https://drive.google.com/drive/folders/1oZDonjNfxDrQ6d0zj6Q_SOrKLqhECtxq)**
 
 ## License
 
-This project is released for educational and research purposes. This project is licensed under the MIT License.
+This project is released under the MIT License. See `LICENSE` for details.
 
-## Download
-
-To download the compiled `.app` version for macOS, use the link below:  
-
-https://drive.google.com/drive/folders/1oZDonjNfxDrQ6d0zj6Q_SOrKLqhECtxq
 
 
 
