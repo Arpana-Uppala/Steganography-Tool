@@ -22,7 +22,7 @@ SteganoTool/
 ├── requirements.txt     # Python dependencies
 ├── README.md            # Project documentation
 ├── .gitignore           # Git ignore rules
-└── dist/                # (Optional) Folder containing built application
+
 ```
 
 ## Dependencies
