@@ -1,95 +1,132 @@
-# Steganography-Tool
+# SteganoTool
+
+**SteganoTool** is a Python-based steganography application featuring a user-friendly GUI built with `tkinter`. This tool allows users to securely embed and extract hidden data in digital media using multiple steganographic techniques.
 
 ## Overview
-This project is a comprehensive GUI-based steganography tool built in Python. It allows users to securely hide and extract data using various steganographic techniques:
 
-- Image to Text Steganography
-- Image to Image Steganography
-- Audio to Text Steganography
-  
-Users can encode (hide) or decode (extract) data with optional password protection (for text-in-image), and interact with a user-friendly interface designed using Tkinter.
+The application supports:
 
+- Hiding and extracting **text messages** inside images
+- Embedding and retrieving **images within images**
+- Encoding and decoding **audio files (WAV format) within images**
+
+The tool is developed to demonstrate secure and covert communication through steganography and provides a simplified interface suitable for educational and personal use.
 
 ## Features
-- Encode and decode secret messages in PNG/BMP images
-- Hide one image inside another image
-- Embed and extract secret text from WAV audio files
-- Password support for image-text steganography (optional)
-- Intuitive GUI that dynamically updates based on user input selections
 
+- Graphical User Interface using `tkinter`
+- Supports commonly used image formats (`.png`, `.jpg`, `.bmp`)
+- Supports WAV audio file embedding
+- Modular code structure for easy maintenance and extension
+- Compatible with macOS systems
+- Packaged as a standalone application using PyInstaller
 
-## Technologies Used
-- Python 3.x
-- Tkinter (GUI)
-- wave (for audio handling)
-- Custom `stegano.py` module for core logic
+## Requirements
 
+To run the application from source, ensure the following Python packages are installed:
 
-## Setup Instructions
+- Pillow
+- OpenCV (`opencv-python`)
+- NumPy
 
-### Prerequisites
-- Python 3.x (recommended: Python 3.8+)
-
-### Installation
-1. Clone the repository:
+You can install them using the following command:
 
 ```bash
-git clone https://github.com/your-username/steganography-tool.git
-cd steganography-tool
+pip3 install -r requirements.txt
 ```
-
-2. Install required libraries:
-
-```bash
-pip install pillow numpy
-```
-
-
-## Running the Application
-
-```bash
-python3 gui_lsb.py
-```
-
 
 ## File Structure
 
-```bash
-├── gui_lsb.py            # Main GUI interface
-├── stegano.py            # Core encoding/decoding logic
-├── audio_output.wav      # Sample audio output (if generated)
-├── secure_output.png     # Sample image output (if generated)
-├── extracted_secret.png  # Image extracted from image (if generated)
-├── README.md             # Project documentation
+```
+SteganoTool/
+├── gui.py               # Main GUI entry point
+├── stegano.py           # Core steganography logic (encode/decode)
+├── requirements.txt     # Python dependencies
+├── README.md            # Project documentation
+├── .gitignore           # Git ignore rules
+└── dist/                # (Optional) Folder containing built application
 ```
 
+## How to Use
 
-## Usage
+### Run from Source
 
-1.Launch the application.
+1. Ensure Python 3.x is installed.
+2. Install required packages:
 
-2.Select the type of steganography (Image → Text, Image → Image, Audio → Text).
+    ```bash
+    pip3 install -r requirements.txt
+    ```
 
-3.Choose whether to encode or decode.
+3. Run the application:
 
-4.Fill in the prompted fields such as image path, message, audio file, or password.
+    ```bash
+    python3 gui.py
+    ```
 
-5.Click on Perform Operation.
+### Build Standalone Application (macOS)
 
-6.Output status and results will appear at the bottom. Decoded messages will appear in bold.
+To build the `.app` file using PyInstaller:
 
+1. Install PyInstaller:
 
-## Notes
+    ```bash
+    pip3 install pyinstaller
+    ```
 
--Only .png and .bmp files are supported for image operations.
+2. Create the standalone app:
 
--Audio files must be in .wav format (16-bit PCM).
+    ```bash
+    pyinstaller --windowed --onefile gui.py
+    ```
 
--For image-in-image steganography, the secret image should be smaller than the cover image.
+3. Navigate to the `dist/` directory:
+
+    ```bash
+    ./dist/gui
+    ```
+
+To rename the application:
+
+```bash
+mv dist/gui dist/SteganoTool
+./dist/SteganoTool
+```
+
+If you prefer a `.app` bundle:
+
+```bash
+pyinstaller --windowed gui.py
+open dist/gui.app
+```
+
+## Compatibility
+
+- Developed and tested on macOS (Intel and Apple Silicon)
+- Compatible with Python 3.9 and above
+- tkinter and other core libraries are standard in most Python installations
+
+## Limitations
+
+- Audio steganography currently supports only uncompressed `.wav` format
+- Large file embedding may increase processing time
+- GUI optimized for medium-resolution screens (recommended 13" and above)
+
+## Contributing
+
+This project is currently a part of an academic internship and is not open to public contributions. However, if you encounter issues or would like to suggest enhancements, feel free to open an issue.
 
 ## License
 
-This project is licensed under the MIT License.
+This project is released for educational and research purposes. This project is licensed under the MIT License.
+
+## Download
+
+To download the compiled `.app` version for macOS, use the link below:  
+
+https://drive.google.com/drive/folders/1oZDonjNfxDrQ6d0zj6Q_SOrKLqhECtxq
+
+
 
 
 
