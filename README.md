@@ -22,6 +22,7 @@ SteganoTool/
 ├── requirements.txt     # Python dependencies
 ├── README.md            # Project documentation
 ├── .gitignore           # Git ignore rules
+├── setup.py
 
 ```
 
