@@ -113,7 +113,7 @@ open dist/gui.app
 
 You can download the pre-built macOS `.app` version from the following link:
 
-**[Download SteganoTool macOS Build](https://drive.google.com/drive/folders/1oZDonjNfxDrQ6d0zj6Q_SOrKLqhECtxq](https://github.com/Arpana-Uppala/Steganography-Tool/releases/download/v1.0.0/SteganoTool.zip)**
+**[Download SteganoTool macOS Build](https://github.com/Arpana-Uppala/Steganography-Tool/releases/download/v1.0.0/SteganoTool.zip)**
 
 ## License
 
