@@ -17,7 +17,7 @@
 
 ```
 SteganoTool/
-├── gui.py               # Main GUI entry point
+├── gui.py               # Main GUI entry pointee
 ├── stegano.py           # Core steganography logic (encode/decode)
 ├── requirements.txt     # Python dependencies
 ├── README.md            # Project documentation
