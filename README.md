@@ -191,6 +191,7 @@ Pre-built application binaries will be available on the [GitHub Releases page]((
 - **[Download SteganoTool macOS Build](https://github.com/Arpana-Uppala/Steganography-Tool/releases/tag/v1.0.0)**
  
 - **[Download SteganoTool Windows Build](https://github.com/Arpana-Uppala/Steganography-Tool/releases/tag/v1.0)**
+  
 These can be used without installing Python or additional dependencies.
 
 ---
