@@ -1,74 +1,108 @@
 # SteganoTool
 
-**SteganoTool** is a Python-based steganography application that enables users to securely embed and extract hidden information within images and audio files using a simple and intuitive graphical interface.
+**SteganoTool** is a cross-platform steganography application developed in Python. It allows users to securely embed and extract hidden messages and images within cover media such as images and audio files using an intuitive graphical interface built with Tkinter.
+
+---
 
 ## Features
 
-- Hide text in image (LSB steganography)
-- Extract text from stego-image
-- Hide one image inside another
-- Extract hidden image from stego-image
-- Hide text inside audio files
-- Extract hidden text from audio files
-- Clean and user-friendly GUI built with `tkinter`
-- macOS `.app` standalone build (no need to install Python)
+- Embed text within image files using Least Significant Bit (LSB) steganography
+- Extract hidden text from images using AES-based optional password decryption
+- Embed one image inside another using 4 MSB-to-LSB encoding
+- Extract hidden images with automatic size detection
+- Embed and extract text inside uncompressed `.wav` audio files
+- Supports AES encryption for secure message protection
+- Standalone GUI-based usage; no command line required
+- Platform-independent: source code runs on any OS with Python 3.9+
+- Standalone executables available for macOS and Windows
+
+---
+
 
 ## File Structure
 
 ```
 SteganoTool/
-├── gui.py               # Main GUI entry pointee
-├── stegano.py           # Core steganography logic (encode/decode)
-├── requirements.txt     # Python dependencies
-├── README.md            # Project documentation
-├── .gitignore           # Git ignore rules
-├── setup.py
-
+├── gui.py # Main GUI interface
+├── stegano.py # Core steganography logic
+├── README.md # Project documentation
 ```
+---
+
+## System Requirements
+
+### General
+
+- Python 3.9 or later
+- Tkinter (included in Python standard distribution)
+- pip (for dependency installation)
+
+### macOS Build
+
+- macOS Ventura, Monterey, or later (Intel or Apple Silicon)
+- `pyinstaller` or `py2app`
+
+### Windows Build
+
+- Windows 10 or 11
+- `pyinstaller`
+
+---
 
 ## Dependencies
 
-The following Python libraries are used in this project:
+### Runtime Requirements
 
-- `altgraph==0.17.4`
-- `colorama==0.4.6`
-- `crayons==0.4.0`
-- `macholib==1.16.3`
-- `modulegraph==0.19.6`
-- `numpy==2.3.0`
-- `opencv-python==4.11.0.86`
-- `packaging==25.0`
-- `piexif==1.1.3`
 - `pillow==10.4.0`
-- `py2app==0.28.8`
 - `pycryptodome==3.23.0`
 - `pydub==0.25.1`
+- `numpy==2.3.0`
+- `opencv-python==4.11.0.86`
+- `stegano==1.0.1`
+
+Install all runtime requirements via:
+  ```bash
+  pip install -r requirements.txt
+    ```
+
+### macOS Packaging Requirements
+
+- `py2app==0.28.8`
+- `altgraph==0.17.4`
+- `macholib==1.16.3`
+- `modulegraph==0.19.6`
+- `crayons==0.4.0`
+
+### Windows Packaging Requirements
+
 - `pyinstaller==6.14.1`
 - `pyinstaller-hooks-contrib==2025.5`
-- `setuptools==80.9.0`
-- `stegano==1.0.1`
-- `tk==0.1.0`
-
-These are automatically installed using the `requirements.txt`.
+- `colorama==0.4.6`
+- `packaging==25.0`
 
 ## How to Use
 
-### Run from Source
+### Running from Source
 
-1. Ensure Python 3.x is installed.
+1. Ensure Python 3.9+ is installed.
 2. Install required packages:
 
     ```bash
-    pip3 install -r requirements.txt
+    pip install -r requirements.txt
     ```
 
-3. Run the application:
+3.  Run the GUI:
 
     ```bash
-    python3 gui.py
+    python gui.py
     ```
 
-### Build Standalone Application (macOS)
+
+---
+
+## Building Standalone Application
+
+### macOS (.app)
 
 To build the `.app` file using PyInstaller:
 
@@ -103,18 +137,65 @@ If you prefer a `.app` bundle:
 pyinstaller --windowed gui.py
 open dist/gui.app
 ```
+### Windows (.exe)
+```bash
+pip install pyinstaller
+pyinstaller --windowed --onefile gui.py
+```
+
+Output: `dist/gui.exe`
+
+Optionally rename:
+
+```bash
+ren dist\gui.exe SteganoTool.exe
+```
+
+Then double-click to run.
+
+---
+
+## Functional Limits and Recommendations
+
+The tool has practical limits based on pixel capacity, audio frame count, and GUI responsiveness:
+
+| Feature               | Limitations and Recommendations                                              |
+|-----------------------|------------------------------------------------------------------------------|
+| Text in Image         | Stores 1 bit per pixel (blue channel). Recommended image size: ≥ 632×632    |
+|                       | for up to ~50,000 characters. Only PNG/BMP formats are supported.            |
+| Image in Image        | Secret image must be smaller than cover image in width and height.           |
+|                       | Uses 4 MSBs of each color channel.                                           |
+| Text in Audio         | Only uncompressed `.wav` files supported. Requires ~400,000 audio frames     |
+|                       | to store 50,000 characters (~9 seconds at 44.1 kHz mono).                    |
+| Message Length        | Recommended maximum: 50,000 characters for all modes.                        |
+| Password Length       | Maximum 256 characters (AES-256 key derived from SHA-256 hash).              |
+| Audio File Size       | Recommended maximum: 500 MB (larger sizes possible but slower performance).  |
+
+Encoding beyond these limits may result in slow execution, decoding failure, or corrupted outputs.
+
+---
 
 ## Compatibility
 
-- Developed and tested on macOS (Intel and Apple Silicon)
-- Compatible with Python 3.9 and above
-- tkinter and other libraries are bundled in the standalone `.app` build
+- macOS Ventura, Monterey, Sonoma (Intel and Apple Silicon)
+- Windows 10 and 11
+- Python 3.9 and above
+- Tkinter-based GUI works on all platforms
 
-## Download Pre-Built App
+---
 
-You can download the pre-built macOS `.app` version from the following link:
+## Pre-Built Releases
 
-**[Download SteganoTool macOS Build](https://github.com/Arpana-Uppala/Steganography-Tool/releases/download/v1.0.0/SteganoTool.zip)**
+Pre-built application binaries will be available on the [GitHub Releases page]((https://github.com/Arpana-Uppala/Steganography-Tool/releases)):
+
+- **[Download SteganoTool macOS Build](https://github.com/Arpana-Uppala/Steganography-Tool/releases/download/v1.0.0/SteganoTool.zip)**
+- 
+- `SteganoTool.exe` – for Windows
+
+These can be used without installing Python or additional dependencies.
+
+---
+
 
 ## License
 
