@@ -63,7 +63,7 @@ SteganoTool/
 Install all runtime requirements via:
   ```bash
   pip install -r requirements.txt
-    ```
+  ```
 
 ### macOS Packaging Requirements
 
