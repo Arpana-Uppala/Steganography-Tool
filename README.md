@@ -188,10 +188,9 @@ Encoding beyond these limits may result in slow execution, decoding failure, or 
 
 Pre-built application binaries will be available on the [GitHub Releases page]((https://github.com/Arpana-Uppala/Steganography-Tool/releases)):
 
-- **[Download SteganoTool macOS Build](https://github.com/Arpana-Uppala/Steganography-Tool/releases/download/v1.0.0/SteganoTool.zip)**
-- 
-- `SteganoTool.exe` – for Windows
-
+- **[Download SteganoTool macOS Build](https://github.com/Arpana-Uppala/Steganography-Tool/releases/tag/v1.0.0)**
+ 
+- **[Download SteganoTool Windows Build](https://github.com/Arpana-Uppala/Steganography-Tool/releases/tag/v1.0)**
 These can be used without installing Python or additional dependencies.
 
 ---
